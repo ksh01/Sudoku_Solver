@@ -75,17 +75,22 @@ class Board(object):
         return printString
 
 def main():
-    myBoard = Board()
-    if myBoard.values == []:
-        myBoard.enterBoard()
-    print("\n Given Board: \n")
-    print(myBoard)
-    print("\n" + "*"*30)
-    if myBoard.solve():
-        print("\n Found a solution : \n")
+    try:
+        myBoard = Board()
+        if myBoard.values == []:
+            myBoard.enterBoard()
+        print("\n Given Board: \n")
         print(myBoard)
-        print()
-    else:
-        print("The board is not solvable")
+        print("\n" + "*"*30)
+        if myBoard.solve():
+            print("\n Found a solution : \n")
+            print(myBoard)
+            print()
+        else:
+            print("The board is not solvable")
+    
+    except KeyboardInterrupt:
+        print("\n\n------Exiting the Sudoku Solver------\n")
+        exit()
 
 main()

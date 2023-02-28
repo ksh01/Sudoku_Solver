@@ -4,6 +4,10 @@ class Board(object):
         self.N = 9
         self.n = 3
     
+    def empty(self):
+        if self.values == []:
+            return True
+        
     def enterBoard(self):
         i = 0
         print("\nEnter the numbers in each row without any gap and 0 for spaces\n")
@@ -77,7 +81,7 @@ class Board(object):
 def main():
     try:
         myBoard = Board()
-        if myBoard.values == []:
+        if myBoard.empty():
             myBoard.enterBoard()
         print("\n Given Board: \n")
         print(myBoard)
